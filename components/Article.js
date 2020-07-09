@@ -139,20 +139,19 @@ function articleMaker(artlDataObj) {
 
   // Step 4: Outside your function, loop over the data. At each iteration you'll use your component to create an article and append it to the 
   // DOM inside the 'articles' div.  
-  // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
   
-  const articlesHTML = document.querySelector('.articles');
-
-  data.push({title: 'Add new article in data',
-  date: 'Jul 8th, 2020',
-  firstParagraph: `Hi! Hodor hodor HODOR! Hodor hodor - hodor, hodor.`,
-  secondParagraph: `Hello! Hodor, hodor. Hodor. Hodor, hodor, hodor. `,
-  thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
-        Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
-        Hodor. Hodor, hodor, hodor. Hodor hodor...`
-  })
-
+  const articlesHTML = document.querySelector('.articles');  
   data.forEach(obj => {
-    const articleDiv = articleMaker(obj)
+  const articleDiv = articleMaker(obj)
     articlesHTML.appendChild(articleDiv)
   })
+
+
+  // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  
+  articlesHTML.appendChild(articleMaker({title: 'New article in data',
+  date: 'Jul 8th, 2020',
+  firstParagraph: `Hi there!`,
+  secondParagraph: `Hello! Hodor, hodor. Hodor. Hodor, hodor, hodor. `,
+  thirdParagraph: `This is great!`
+}))
